@@ -2,63 +2,58 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>ESMIRINGHOY - Free Forever</title>
-<link rel="manifest" href='data:application/json,{"name":"ESMIRINGHOY","short_name":"ESMIRINGHOY","start_url":".","display":"standalone","background_color":"#FF1A1A","theme_color":"#FF1A1A"}'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ESMIRINGHOY</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#FF1A1A 0%,#FF5A1A 25%,#FF8C00 50%,#FFD600 80%,#FFE600 100%);min-height:100vh;color:#3A0A0A;overflow-x:hidden}
-.header{position:sticky;top:0;z-index:20;background:linear-gradient(90deg,#FF1A1A,#FF6B00);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;color:white;box-shadow:0 2px 12px rgba(0,0,0,.2)}
-.logo{font-weight:900;font-size:20px;letter-spacing:.5px}
+body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#FF1A1A 0%,#FF6B00 30%,#FFD600 80%,#FFE600 100%);min-height:100vh;color:#3A0A0A;overflow-x:hidden}
+.header{position:sticky;top:0;z-index:20;background:linear-gradient(90deg,#FF1A1A,#FF6B00);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;color:white}
+.logo{font-weight:900;font-size:20px}
 .badge{background:white;color:#FF1A1A;border-radius:999px;padding:4px 12px;font-size:11px;font-weight:800}
-.tagline{background:#FFD600;color:#5A0E12;text-align:center;padding:8px;font-size:11px;font-weight:800;letter-spacing:.8px}
+.tagline{background:#FFD600;color:#5A0E12;text-align:center;padding:8px;font-size:11px;font-weight:800}
 .wrap{max-width:400px;margin:0 auto;padding:12px 16px 130px}
-.card{background:white;border-radius:28px;overflow:hidden;box-shadow:0 20px 60px rgba(90,14,18,.25);border:3px solid white;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .3s}
+.card{background:white;border-radius:28px;overflow:hidden;box-shadow:0 20px 60px rgba(90,14,18,.25);border:3px solid white;transition:transform .35s,opacity .3s}
 .card-img{height:220px;background:linear-gradient(180deg,#FF8FA3,#FFD6E0);display:grid;place-items:center;position:relative}
-.card-img span{font-size:96px}
 .card-body{padding:16px}
 .name{font-weight:900;font-size:22px;display:flex;align-items:center;gap:8px}
 .dot{width:10px;height:10px;background:#00E676;border-radius:50%;display:inline-block;border:2px solid white;box-shadow:0 0 0 2px #00E676}
-.loc{font-size:12px;color:#6B4A4A;margin-top:4px;font-weight:600;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
-.bio{font-size:14px;margin-top:10px;line-height:1.5;color:#3A0A0A}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.tag{background:#FFF0F0;border:1px solid #FFD6D6;border-radius:999px;padding:5px 10px;font-size:11px;font-weight:800;color:#5A0E12}
+.loc{font-size:12px;color:#6B4A4A;margin-top:4px;display:flex;flex-wrap:wrap;gap:8px}
+.bio{font-size:14px;margin-top:10px;line-height:1.5}
+.tags{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap}
+.tag{background:#FFF0F0;border:1px solid #FFD6D6;border-radius:999px;padding:5px 10px;font-size:11px;font-weight:800}
 .actions{display:flex;justify-content:center;gap:16px;margin-top:18px}
-.btn{border:none;cursor:pointer;font-weight:800;border-radius:50%;width:60px;height:60px;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.15);font-size:20px;transition:.2s}
-.btn:active{transform:scale(.9)}
-.btn-pass{background:white;border:2px solid #FFD6D6;color:#7A4A4A}
+.btn{border:none;cursor:pointer;font-weight:800;border-radius:50%;width:60px;height:60px;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.15);font-size:20px}
+.btn-pass{background:white;border:2px solid #FFD6D6}
 .btn-super{background:linear-gradient(180deg,#FFD600,#FFEA00);border:3px solid white}
 .btn-like{background:#FF1A1A;color:white}
 .nav{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:white;border-radius:999px;padding:8px 10px;display:flex;gap:4px;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:30;max-width:96vw}
-.nav button{border:none;background:transparent;padding:10px 14px;border-radius:999px;font-size:11px;font-weight:800;cursor:pointer;color:#7A4A4A;display:flex;align-items:center;gap:4px}
+.nav button{border:none;background:transparent;padding:10px 14px;border-radius:999px;font-size:11px;font-weight:800;cursor:pointer;color:#7A4A4A}
 .nav button.active{background:#FF1A1A;color:white}
 .ad-box{margin-top:22px;background:white;border-radius:20px;padding:16px;box-shadow:0 12px 30px rgba(0,0,0,.15);border:2px dashed #FFD600}
-.ad-title{font-weight:900;font-size:14px;color:#5A0E12}
-.ad-pkg{border:1px solid #FFE0B2;border-radius:12px;padding:10px;margin-top:8px;display:flex;justify-content:space-between;align-items:center}
-.ad-pkg.selected{border-color:#FF1A1A;background:#FFF0F0}
 .contact-btn{margin-top:12px;width:100%;background:#FF1A1A;color:white;border:none;border-radius:999px;padding:12px;font-weight:900;font-size:13px;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:6px}
-.install-btn{margin-top:12px;width:100%;background:linear-gradient(90deg,#FF1A1A,#FF6B00);color:white;border:none;border-radius:999px;padding:12px;font-weight:900;font-size:13px;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:6px;box-shadow:0 8px 20px rgba(0,0,0,.2)}
-.match-popup{position:fixed;inset:0;background:rgba(255,26,46,.25);backdrop-filter:blur(12px);display:none;place-items:center;z-index:100;padding:20px}
-.match-card{background:white;border-radius:28px;padding:24px;max-width:360px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.install-btn{margin-top:10px;width:100%;background:linear-gradient(90deg,#FF1A1A,#FF6B00);color:white;border:none;border-radius:999px;padding:10px;font-weight:800;font-size:12px;cursor:pointer}
 .view{display:none}
 .view.active{display:block}
-.chat-list{margin-top:12px;display:grid;gap:8px}
-.chat-item{background:white;border-radius:16px;padding:12px;display:flex;gap:10px;align-items:center;box-shadow:0 4px 12px rgba(0,0,0,.1)}
-input,select{width:100%;padding:10px;border-radius:10px;border:1px solid #FFD6D6;margin-top:6px;font-size:13px}
+.chat-item{background:white;border-radius:16px;padding:12px;display:flex;gap:10px;align-items:center;margin-top:8px;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.chat-window{background:white;border-radius:16px;padding:12px;margin-top:12px;height:320px;display:flex;flex-direction:column}
+.chat-msgs{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:8px}
+.msg{max-width:75%;padding:8px 12px;border-radius:16px;font-size:13px}
+.msg.me{align-self:flex-end;background:#FF1A1A;color:white}
+.msg.them{align-self:flex-start;background:#FFF0F0}
+.chat-input{display:flex;gap:8px;margin-top:8px}
+.chat-input input{flex:1;padding:10px;border-radius:999px;border:1px solid #FFD6D6}
+.match-popup{position:fixed;inset:0;background:rgba(0,0,0,.4);backdrop-filter:blur(10px);display:none;place-items:center;z-index:100;padding:20px}
+.match-card{background:white;border-radius:28px;padding:24px;max-width:340px;width:100%;text-align:center}
 </style>
 </head>
 <body>
-<div class="header">
-  <div class="logo">🔥 ESMIRINGHOY</div>
-  <div class="badge">18+ • SFW</div>
-</div>
+<div class="header"><div class="logo">🔥 ESMIRINGHOY</div><div class="badge">18+ • SFW</div></div>
 <div class="tagline">BEFORE WE SEPARATE, LET'S CHEER UP FIRST</div>
 
 <div class="wrap">
-<!-- DISCOVER VIEW -->
 <div id="view-discover" class="view active">
   <div id="card" class="card">
-    <div class="card-img"><span id="emoji">🌸</span><div style="position:absolute;bottom:12px;left:12px;background:rgba(255,255,255,.9);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:900" id="letter">M</div></div>
+    <div class="card-img"><span id="emoji" style="font-size:90px">🌸</span><div style="position:absolute;bottom:12px;left:12px;background:rgba(255,255,255,.9);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:900" id="letter">M</div></div>
     <div class="card-body">
       <div class="name"><span id="cName">Mica</span> <span id="cAge" style="font-weight:700;color:#7A4A4A">22</span> <span class="dot"></span></div>
       <div class="loc">📍 <span id="cLoc">Quezon City • 3km away</span> <span style="background:#FFF9E0;border-radius:999px;padding:3px 8px;font-size:10px;font-weight:800">Good vibes only ✨</span></div>
@@ -73,62 +68,39 @@ input,select{width:100%;padding:10px;border-radius:10px;border:1px solid #FFD6D6
   </div>
 </div>
 
-<!-- MATCHES VIEW -->
 <div id="view-matches" class="view">
-  <h2 style="font-weight:900;font-size:20px">Matches <span id="mCount">0</span></h2>
-  <div id="matchList" class="chat-list"></div>
+  <h2 style="font-weight:900;font-size:18px">Matches <span id="mCount">0</span></h2>
+  <div id="matchList"></div>
 </div>
 
-<!-- CHAT VIEW -->
 <div id="view-chat" class="view">
-  <h2 style="font-weight:900;font-size:20px">Chat</h2>
-  <div id="chatList" class="chat-list"></div>
+  <h2 style="font-weight:900;font-size:18px">Chat <span id="chatWith" style="font-weight:600;color:#FF1A1A"></span></h2>
+  <div id="noChat" style="background:white;border-radius:16px;padding:20px;text-align:center;margin-top:12px;font-size:13px;color:#7A4A4A">No chats yet. Like someone to start chatting! Swipe on Discover.</div>
+  <div id="chatWindow" class="chat-window" style="display:none">
+    <div id="chatMsgs" class="chat-msgs"></div>
+    <div class="chat-input"><input id="msgInput" placeholder="Type a message..." onkeydown="if(event.key==='Enter') sendMsg()"><button onclick="sendMsg()" style="background:#FF1A1A;color:white;border:none;border-radius:999px;padding:10px 16px;font-weight:800">Send</button></div>
+  </div>
+  <div id="chatListAll"></div>
 </div>
 
-<!-- PROFILE VIEW -->
 <div id="view-profile" class="view">
-  <h2 style="font-weight:900;font-size:20px">Profile</h2>
+  <h2 style="font-weight:900;font-size:18px">Profile</h2>
   <div style="background:white;border-radius:20px;padding:16px;margin-top:12px">
-    <div style="font-weight:900">Duterte Eagle - Developer</div>
-    <div style="font-size:13px;color:#6B4A4A;margin-top:4px">Owner of ESMIRINGHOY - Free Forever</div>
-    <button class="contact-btn" onclick="contactDev()">Contact Developer via WhatsApp 📩</button>
+    <div style="font-weight:900">ESMIRINGHOY User</div>
+    <div style="font-size:12px;color:#6B4A4A;margin-top:4px">18+ SFW Dating - Good vibes only</div>
+    <button class="contact-btn" onclick="contactDev()">Contact Developer 📩</button>
   </div>
 </div>
 
-<!-- AD BOX + INSTALL -->
-<div class="ad-box" id="adBox">
-  <div class="ad-title">ADVERTISEMENT</div>
+<div class="ad-box">
+  <div style="font-weight:900;font-size:14px">ADVERTISEMENT</div>
   <div style="margin-top:4px;background:#FFF0F0;border-radius:8px;padding:4px 8px;display:inline-block;font-size:10px;font-weight:800">SPONSORED • OPEN FOR ADS</div>
-  <div style="margin-top:8px;font-size:12px;line-height:1.4"><b>Your Ad Here</b> - Reach thousands daily! Promote brand/shop/event.</div>
-  
-  <div style="margin-top:12px;font-weight:900;font-size:12px">CHOOSE PACKAGE (Auto Contract):</div>
-  <div id="pkgList">
-    <div class="ad-pkg" data-price="50" data-unit="hour"><div><b>Per Hour</b><br><small>₱50/hour</small></div><button onclick="selectPkg(this)" style="background:#FF1A1A;color:white;border:none;border-radius:999px;padding:6px 12px;font-weight:800;font-size:11px">SELECT</button></div>
-    <div class="ad-pkg" data-price="300" data-unit="day"><div><b>Per Day</b><br><small>₱300/day</small></div><button onclick="selectPkg(this)" style="background:#FF1A1A;color:white;border:none;border-radius:999px;padding:6px 12px;font-weight:800;font-size:11px">SELECT</button></div>
-    <div class="ad-pkg" data-price="1500" data-unit="week"><div><b>Per Week</b><br><small>₱1,500/week</small></div><button onclick="selectPkg(this)" style="background:#FF1A1A;color:white;border:none;border-radius:999px;padding:6px 12px;font-weight:800;font-size:11px">SELECT</button></div>
-    <div class="ad-pkg" data-price="5000" data-unit="month"><div><b>Per Month</b> ⭐ Best Value<br><small>₱5,000/month</small></div><button onclick="selectPkg(this)" style="background:#FF1A1A;color:white;border:none;border-radius:999px;padding:6px 12px;font-weight:800;font-size:11px">SELECT</button></div>
-    <div class="ad-pkg" data-price="50000" data-unit="year"><div><b>Per Year</b><br><small>₱50,000/year</small></div><button onclick="selectPkg(this)" style="background:#FF1A1A;color:white;border:none;border-radius:999px;padding:6px 12px;font-weight:800;font-size:11px">SELECT</button></div>
-  </div>
-
-  <div id="contractForm" style="display:none;margin-top:12px;background:#FFF9E0;border-radius:12px;padding:12px">
-    <div style="font-weight:900;font-size:12px" id="selectedPkgText">Selected: </div>
-    <label style="font-size:11px;font-weight:800;margin-top:8px;display:block">Quantity (e.g. 3 days/weeks):</label>
-    <input type="number" id="qty" value="1" min="1" oninput="calcTotal()">
-    <label style="font-size:11px;font-weight:800;margin-top:8px;display:block">Business Name:</label>
-    <input type="text" id="bizName" placeholder="My Shop / Brand">
-    <label style="font-size:11px;font-weight:800;margin-top:8px;display:block">Ad Text / Image Link:</label>
-    <input type="text" id="adText" placeholder="50% OFF Sale!">
-    <label style="font-size:11px;font-weight:800;margin-top:8px;display:block">Auto Contract:</label>
-    <div style="font-size:11px;background:white;border-radius:8px;padding:8px;margin-top:4px" id="contractPreview">Start: now<br>Expiry: auto<br>Total: ₱0</div>
-    <label style="font-size:11px;font-weight:800;margin-top:8px;display:block"><input type="checkbox" id="autoRenew"> Auto Renew (free forever billing reminder)</label>
-    <button class="contact-btn" onclick="payContract()">Generate Contract & Pay via WhatsApp 📩</button>
-    <div style="font-size:10px;margin-top:6px;color:#6B4A4A">Payment: GCash / Maya / Bank - Manual verification, QR will be sent via WhatsApp</div>
-  </div>
-
-  <button class="install-btn" id="installBtn" onclick="installApp()">📲 Install App - Free Forever (No Play Store Needed)</button>
-  <div style="font-size:10px;text-align:center;margin-top:6px;color:#6B4A4A">Free forever • Add to home screen • Works offline</div>
+  <div style="margin-top:8px;font-size:12px;line-height:1.4"><b>Your Ad Here</b> - Reach thousands daily. Promote your brand, shop, or event! Click below to inquire.</div>
+  <button class="contact-btn" onclick="contactDevAds()">Contact the Developer 📩 (For Ads)</button>
+  <div style="margin-top:6px;font-size:11px;color:#FF1A1A"><span onclick="contactDevAds()" style="cursor:pointer;text-decoration:underline;font-weight:800">WhatsApp</span> <span style="color:#999">•</span> <span onclick="contactDevAds()" style="cursor:pointer;text-decoration:underline;font-weight:800">Email Us</span></div>
+  <button class="install-btn" onclick="installApp()">📲 Install App - Free Forever (No Play Store)</button>
+  <div style="font-size:9px;text-align:center;margin-top:6px;color:#6B4A4A">Free forever • Add to home screen • Works offline</div>
 </div>
-
 </div>
 
 <div class="nav">
@@ -141,7 +113,7 @@ input,select{width:100%;padding:10px;border-radius:10px;border:1px solid #FFD6D6
 <div id="matchPop" class="match-popup">
   <div class="match-card">
     <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(180deg,#FF1A1A,#FFD600);display:grid;place-items:center;font-size:36px;margin:0 auto">💛</div>
-    <h2 style="margin-top:14px;font-size:26px;font-weight:900">It's a Match!</h2>
+    <h2 style="margin-top:14px;font-size:24px;font-weight:900">It's a Match!</h2>
     <p style="font-size:13px;color:#6B4A4A;margin-top:8px" id="matchText">You and Mica liked each other</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px">
       <button onclick="closeMatch()" style="border:1px solid #FFD6D6;background:white;border-radius:999px;padding:12px;font-weight:800">Keep Swiping</button>
@@ -151,24 +123,27 @@ input,select{width:100%;padding:10px;border-radius:10px;border:1px solid #FFD6D6
 </div>
 
 <script>
-// HIDDEN WHATSAPP - DO NOT SHOW NUMBER
+// ===== HIDDEN EMBEDDED CONFIG - NOT VISIBLE TO PUBLIC =====
 const WHATSAPP_HIDDEN='639565815679';
+const PRICING_HIDDEN={hour:50,day:300,week:1500,month:5000,year:50000}; // embedded, not shown
+const CONTRACT_HIDDEN={autoStart:true,autoExpiry:true,autoRenewDefault:false}; // embedded
+// ===== END HIDDEN =====
 
 let deferredPrompt=null;
-window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;document.getElementById('installBtn').style.display='flex';});
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;});
 function installApp(){
-  if(deferredPrompt){deferredPrompt.prompt();deferredPrompt.userChoice.then(()=>{deferredPrompt=null;});}
-  else{alert('To install: Click ⋮ menu (3 dots) > Add to Home Screen / Install App - Free Forever!');}
+  if(deferredPrompt){deferredPrompt.prompt();}
+  else{alert('To install: Tap ⋮ menu > Add to Home Screen / Install App - Free Forever!');}
 }
 
-// PROFILES
 const profiles=[
   {name:'Mica',age:22,loc:'Quezon City • 3km away',bio:'Coffee and gossip? Let\'s go! Love karaoke and sunset walks. Before we part... you know 😉',emoji:'🌸',letter:'M'},
   {name:'Andrea',age:23,loc:'Quezon City • 2km away',bio:'Coffee sa umaga, club sa gabi. Tara ESMIRINGHOY tayo?',emoji:'☕',letter:'A'},
-  {name:'Janna',age:24,loc:'Makati • 5km away',bio:'K-drama marathon + gym girlie. Looking for buddy.',emoji:'💅',letter:'J'},
-  {name:'Miguel',age:26,loc:'Taguig • 4km away',bio:'Weekend cyclist, weekday designer. G sa sunset rides.',emoji:'🚴',letter:'M'},
+  {name:'Janna',age:24,loc:'Makati • 5km away',bio:'K-drama marathon + gym girlie.',emoji:'💅',letter:'J'},
+  {name:'Miguel',age:26,loc:'Taguig • 4km away',bio:'Weekend cyclist, weekday designer.',emoji:'🚴',letter:'M'},
 ];
-let i=0, matches=0, matchArr=[], chatArr=[], lastMatched=null;
+let i=0, matches=0, matchArr=[], chatData={}, currentChat=null, lastMatched=null;
+
 function render(){
   const p=profiles[i];
   document.getElementById('cName').innerText=p.name;
@@ -180,16 +155,20 @@ function render(){
 }
 function swipe(type){
   const card=document.getElementById('card');
-  card.style.transform = type==='pass' ? 'translateX(-420px) rotate(-18deg)' : 'translateX(420px) rotate(18deg)';
+  card.style.transform = type==='pass' ? 'translateX(-400px) rotate(-15deg)' : 'translateX(400px) rotate(15deg)';
   card.style.opacity='0';
   setTimeout(()=>{
     if(type!=='pass'){
-      matches++; matchArr.push(profiles[i]); chatArr.push(profiles[i]);
-      lastMatched=profiles[i];
-      document.getElementById('mCount').innerText=matches;
-      updateLists();
-      document.getElementById('matchText').innerText='You and '+profiles[i].name+' liked each other';
-      document.getElementById('matchPop').style.display='grid';
+      const p=profiles[i];
+      if(!matchArr.find(x=>x.name===p.name)){
+        matches++; matchArr.push(p);
+        chatData[p.name]=chatData[p.name]||[{from:'them',text:`Hi! I'm ${p.name} 😉 G ka mag-ESMIRINGHOY?`}];
+        lastMatched=p;
+        document.getElementById('mCount').innerText=matches;
+        document.getElementById('matchText').innerText=`You and ${p.name} liked each other`;
+        document.getElementById('matchPop').style.display='grid';
+        updateLists();
+      }
     }
     i=(i+1)%profiles.length;
     render();
@@ -199,7 +178,10 @@ function swipe(type){
 function closeMatch(){ document.getElementById('matchPop').style.display='none'; }
 function sendMessageFromMatch(){
   closeMatch();
-  if(lastMatched){ alert('Message sent to '+lastMatched.name+'! Check CHAT tab.'); showView('chat'); }
+  if(lastMatched){
+    openChat(lastMatched.name);
+    showView('chat');
+  }
 }
 function showView(v){
   document.querySelectorAll('.view').forEach(el=>el.classList.remove('active'));
@@ -208,60 +190,64 @@ function showView(v){
   document.getElementById('nav-'+v).classList.add('active');
 }
 function updateLists(){
-  document.getElementById('matchList').innerHTML=matchArr.map(m=>`<div class='chat-item'><div style='width:40px;height:40px;border-radius:50%;background:#FFD6E0;display:grid;place-items:center;font-weight:900'>${m.letter}</div><div><b>${m.name} ${m.age}</b><br><small>It's a match! • ${m.loc}</small></div><button onclick="showView('chat')" style='margin-left:auto;background:#FF1A1A;color:white;border:none;border-radius:999px;padding:6px 12px;font-size:11px;font-weight:800'>CHAT</button></div>`).join('');
-  document.getElementById('chatList').innerHTML=chatArr.map(m=>`<div class='chat-item'><div style='width:40px;height:40px;border-radius:50%;background:#FFD6E0;display:grid;place-items:center;font-weight:900'>${m.letter}</div><div style='flex:1'><b>${m.name}</b><br><small>Hi! G ka mag-ESMIRINGHOY? 😉</small></div><button onclick="contactDev()" style='background:white;border:1px solid #FFD6D6;border-radius:999px;padding:6px 12px;font-size:11px'>Reply</button></div>`).join('');
+  document.getElementById('matchList').innerHTML=matchArr.map(m=>`<div class='chat-item'><div style='width:40px;height:40px;border-radius:50%;background:#FFD6E0;display:grid;place-items:center;font-weight:900'>${m.letter}</div><div><b>${m.name} ${m.age}</b><br><small>It's a match!</small></div><button onclick="openChat('${m.name}')" style='margin-left:auto;background:#FF1A1A;color:white;border:none;border-radius:999px;padding:6px 12px;font-size:11px;font-weight:800'>CHAT</button></div>`).join('')||'<div style="padding:12px;color:#999;font-size:12px">No matches yet</div>';
+  document.getElementById('chatListAll').innerHTML=Object.keys(chatData).map(name=>`<div class='chat-item' onclick="openChat('${name}')" style='cursor:pointer'><div style='width:40px;height:40px;border-radius:50%;background:#FFD6E0;display:grid;place-items:center;font-weight:900'>${name[0]}</div><div><b>${name}</b><br><small>${chatData[name][chatData[name].length-1].text.slice(0,30)}</small></div></div>`).join('');
+  if(Object.keys(chatData).length>0) document.getElementById('noChat').style.display='none';
+}
+function openChat(name){
+  currentChat=name;
+  document.getElementById('chatWith').innerText=' - '+name;
+  document.getElementById('chatWindow').style.display='flex';
+  const msgs=chatData[name]||[];
+  document.getElementById('chatMsgs').innerHTML=msgs.map(m=>`<div class='msg ${m.from==='me'?'me':'them'}'>${m.text}</div>`).join('');
+  document.getElementById('chatMsgs').scrollTop=9999;
+  showView('chat');
+}
+function sendMsg(){
+  const input=document.getElementById('msgInput');
+  const text=input.value.trim();
+  if(!text||!currentChat) return;
+  chatData[currentChat].push({from:'me',text});
+  input.value='';
+  // auto reply
+  setTimeout(()=>{
+    const replies=['Haha oo naman 😉','G! Kape tayo?','Good vibes only ✨','Tara ESMIRINGHOY tayo!','Uy nice 😊'];
+    chatData[currentChat].push({from:'them',text:replies[Math.floor(Math.random()*replies.length)]});
+    if(currentChat) openChat(currentChat);
+    updateLists();
+  },800);
+  openChat(currentChat);
+  updateLists();
 }
 function contactDev(){
-  const msg=encodeURIComponent('Hi! Interested sa ESMIRINGHOY - Ads / Support 🔥');
+  const msg=encodeURIComponent('Hi! From ESMIRINGHOY app 🔥 Support / inquiry');
   window.open('https://wa.me/'+WHATSAPP_HIDDEN+'?text='+msg,'_blank');
 }
+function contactDevAds(){
+  // hidden pricing embedded in message, not visible on page
+  const pkgInfo=Object.entries(PRICING_HIDDEN).map(([k,v])=>`${k}: ₱${v}`).join(', ');
+  const msg=encodeURIComponent(`🔥 ESMIRINGHOY AD INQUIRY 🔥
+I want to advertise!
 
-// ADS CONTRACT
-let selectedPrice=0, selectedUnit='';
-function selectPkg(btn){
-  document.querySelectorAll('.ad-pkg').forEach(p=>p.classList.remove('selected'));
-  const pkg=btn.closest('.ad-pkg');
-  pkg.classList.add('selected');
-  selectedPrice=parseInt(pkg.dataset.price);
-  selectedUnit=pkg.dataset.unit;
-  document.getElementById('contractForm').style.display='block';
-  document.getElementById('selectedPkgText').innerText='Selected: Per '+selectedUnit+' - ₱'+selectedPrice+'/'+selectedUnit;
-  calcTotal();
-  document.getElementById('contractForm').scrollIntoView({behavior:'smooth'});
-}
-function calcTotal(){
-  const qty=parseInt(document.getElementById('qty').value)||1;
-  const total=selectedPrice*qty;
-  const now=new Date();
-  let expiry=new Date(now);
-  if(selectedUnit==='hour') expiry.setHours(now.getHours()+qty);
-  if(selectedUnit==='day') expiry.setDate(now.getDate()+qty);
-  if(selectedUnit==='week') expiry.setDate(now.getDate()+qty*7);
-  if(selectedUnit==='month') expiry.setMonth(now.getMonth()+qty);
-  if(selectedUnit==='year') expiry.setFullYear(now.getFullYear()+qty);
-  document.getElementById('contractPreview').innerHTML=`Start: ${now.toLocaleString()}<br>Expiry: ${expiry.toLocaleString()}<br><b>Total: ₱${total.toLocaleString()} for ${qty} ${selectedUnit}(s)</b><br><small>Contract auto expires, auto renew if checked</small>`;
-}
-function payContract(){
-  const qty=document.getElementById('qty').value||1;
-  const biz=document.getElementById('bizName').value||'My Business';
-  const ad=document.getElementById('adText').value||'My Ad';
-  const total=selectedPrice*qty;
-  const autoRenew=document.getElementById('autoRenew').checked?'YES':'NO';
-  const msg=encodeURIComponent(`🔥 ESMIRINGHOY AD BOOKING 🔥
-Package: Per ${selectedUnit}
-Quantity: ${qty}
-Total: ₱${total}
-Business: ${biz}
-Ad: ${ad}
-Auto Renew: ${autoRenew}
-Duration: ${qty} ${selectedUnit}(s)
+Hidden pricing (embedded): ${pkgInfo}
+Auto contract: Start now, auto expiry, auto renew available.
 
-Please send GCash QR for payment. Free forever contract.`);
+Please send details.`);
   window.open('https://wa.me/'+WHATSAPP_HIDDEN+'?text='+msg,'_blank');
 }
 render();
 updateLists();
-if('serviceWorker' in navigator){ navigator.serviceWorker.register('data:text/javascript, self.addEventListener("fetch",e=>{});'); }
+
+// drag
+let startX=0;
+const card=document.getElementById('card');
+card.addEventListener('touchstart',e=>startX=e.touches[0].clientX);
+card.addEventListener('touchend',e=>{
+  const diff=e.changedTouches[0].clientX-startX;
+  if(diff>80) swipe('like');
+  else if(diff<-80) swipe('pass');
+  else {card.style.transform='';}
+});
 </script>
 </body>
 </html>
