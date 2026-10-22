@@ -1,83 +1,55 @@
 <!DOCTYPE html>
-<html lang="en" translate="no">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>ESMIRINGHOY - FINAL TAPOS NA - FIXED</title>
-<meta name="theme-color" content="#ff3300">
-<link rel="icon" href="data:image/png;base64,iVBORw0KGgo=">
+<title>ESMIRINGHOY - OFFLINE FIXED</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:system-ui;background:#0a0a0a;color:white}
-.header{background:linear-gradient(90deg,#ff4d00,#ff1a00);padding:10px 12px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
-.logo-wrap{display:flex;align-items:center;gap:8px} .logo-wrap img{width:36px;height:36px;border-radius:10px;border:1.5px solid #fff}
-.header h1{margin:0;font-size:16px;font-weight:900} .badge{background:white;color:#ff3300;padding:3px 8px;border-radius:20px;font-size:8px;font-weight:900}
-.yellow-bar{background:linear-gradient(90deg,#ffcc00,#ffb700);color:#000;padding:6px;text-align:center;font-weight:900;font-size:10px}
-.nav{display:flex;background:#141414;padding:6px;gap:6px;position:sticky;top:52px;z-index:90} .nav button{flex:1;padding:9px 4px;border:none;border-radius:10px;font-weight:800;font-size:11px;background:#222;color:#888} .nav button.active{background:linear-gradient(90deg,#ff8a00,#ff3300);color:white}
-.main{max-width:480px;margin:0 auto;padding:10px}
-.card{background:white;border-radius:20px;color:#222;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.6);min-height:500px} .card-photo{width:100%;height:460px;background:#111;position:relative;overflow:hidden} .card-photo img{width:100%;height:100%;object-fit:cover}
-.card-info{padding:12px 14px;background:white} .card-info h2{margin:0;font-size:19px} .bio{margin:6px 0 0;font-size:13px;color:#444}
-.actions{display:flex;justify-content:center;gap:22px;margin:18px 0} .actions button{width:64px;height:64px;border-radius:50%;border:none;font-size:24px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.4)} .no{background:white} .star{background:linear-gradient(180deg,#ffef60,#ffcc00)} .heart{background:linear-gradient(180deg,#ff5c5c,#ff1a1a);color:white}
-.tab-content{display:none} .tab-content.active{display:block} .ad{background:linear-gradient(180deg,#fff,#fffbe6);border-radius:14px;padding:12px;color:#111;border:2.5px dashed #ffcc00;margin-top:14px}
-.btn{width:100%;padding:12px;border-radius:24px;border:none;margin:6px 0;font-weight:900;font-size:13px;cursor:pointer} .btn-orange{background:linear-gradient(90deg,#ff8a00,#ff3300);color:white} .btn-red{background:linear-gradient(90deg,#ff4444,#ff1a1a);color:white} .btn-blue{background:linear-gradient(90deg,#4a90e2,#357abd);color:white}
-.input{width:100%;padding:11px;border-radius:10px;border:1px solid #333;background:#1a1a1a;color:white;margin:6px 0;font-size:13px} 
+.header{background:linear-gradient(90deg,#ff4d00,#ff1a00);padding:12px;display:flex;justify-content:space-between;align-items:center}
+.badge{background:white;color:#ff3300;padding:4px 10px;border-radius:20px;font-size:9px;font-weight:900}
+.yellow-bar{background:linear-gradient(90deg,#ffcc00,#ffb700);color:#000;padding:7px;text-align:center;font-weight:900;font-size:11px}
+.nav{display:flex;background:#141414;padding:6px;gap:6px} .nav button{flex:1;padding:10px;border:none;border-radius:12px;font-weight:800;font-size:12px;background:#222;color:#888} .nav button.active{background:linear-gradient(90deg,#ff8a00,#ff3300);color:white}
+.main{max-width:480px;margin:0 auto;padding:12px}
+.card{background:white;border-radius:20px;color:#222;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.6)} .card-photo{width:100%;height:480px;background:#111;position:relative;overflow:hidden} .card-photo img{width:100%;height:100%;object-fit:cover}
+.card-info{padding:14px} .card-info h2{margin:0;font-size:20px} .bio{margin:6px 0 0;font-size:14px;color:#444}
+.actions{display:flex;justify-content:center;gap:24px;margin:20px 0} .actions button{width:68px;height:68px;border-radius:50%;border:none;font-size:26px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.4)} .no{background:white} .star{background:linear-gradient(180deg,#ffef60,#ffcc00)} .heart{background:linear-gradient(180deg,#ff5c5c,#ff1a1a);color:white}
+.tab-content{display:none} .tab-content.active{display:block}
+.ad{background:linear-gradient(180deg,#fff,#fffbe6);border-radius:14px;padding:14px;color:#111;border:2.5px dashed #ffcc00;margin-top:16px}
+.btn{width:100%;padding:13px;border-radius:24px;border:none;margin:6px 0;font-weight:900;font-size:13px;cursor:pointer} .btn-orange{background:linear-gradient(90deg,#ff8a00,#ff3300);color:white} .btn-blue{background:linear-gradient(90deg,#4a90e2,#357abd);color:white}
+.input{width:100%;padding:12px;border-radius:10px;border:1px solid #333;background:#1a1a1a;color:white;margin:6px 0;font-size:13px} 
 .member-item{background:#181818;border:1px solid #242424;border-radius:12px;padding:10px;display:flex;gap:10px;align-items:center;margin-bottom:8px} .member-item img{width:52px;height:52px;border-radius:10px;object-fit:cover}
-.empty{text-align:center;padding:30px 16px;color:#666;font-size:13px} .chat-bubble{max-width:78%;padding:9px 13px;border-radius:18px;margin:6px 0;font-size:13px} .chat-me{background:linear-gradient(90deg,#ff8a00,#ff3300);color:white;margin-left:auto} .chat-them{background:#242424;color:#e8e8e8;margin-right:auto} .chat-system{background:#1a1a1a;color:#ffcc00;text-align:center;font-size:11px;margin:10px auto;border-radius:8px;padding:6px 10px;max-width:85%}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px} .modal-box{background:#181818;border:1px solid #2a2a2a;border-radius:20px;padding:20px;max-width:380px;width:100%}
+.empty{text-align:center;padding:30px;color:#666}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px} .modal-box{background:#181818;border:1px solid #2a2a2a;border-radius:20px;padding:22px;max-width:380px;width:100%}
 .status{background:#0f1a2a;border:1px solid #1e3a5f;border-radius:10px;padding:10px;font-size:11px;color:#8ab4ff;margin:8px 0}
 </style>
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, getDocs, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-const firebaseConfig = {
-  apiKey: "AIzaSyDE6d3KediEtTrdaf719iqtgXiosnCPtS4",
-  authDomain: "esmiringhoy-5d2c2.firebaseapp.com",
-  projectId: "esmiringhoy-5d2c2",
-  storageBucket: "esmiringhoy-5d2c2.appspot.com",
-  messagingSenderId: "52000144471",
-  appId: "1:52000144471:web:a7f18eefa79dc5fc6b7712"
-};
-try {
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-  window.db=db;
-  window.fb={collection, getDocs, doc, setDoc};
-  window.fbReady=true;
-  console.log("🔥 FIXED - NO STORAGE - READY");
-  document.addEventListener('DOMContentLoaded',()=>{ const el=document.getElementById('firebaseStatus'); if(el) el.innerHTML="🟢 Firebase: esmiringhoy-5d2c2 - Ready! (FIXED - No Storage)"; });
-} catch(e){
-  console.error("Firebase init failed", e);
-  window.fbReady=false;
-}
-</script>
 </head>
 <body>
 <div id="genderModal" class="modal">
 <div class="modal-box" style="text-align:center">
-<h2 style="margin:0 0 6px">Welcome to ESMIRINGHOY 💘</h2>
-<p style="color:#888;font-size:12px;margin:0 0 12px">FINAL FIXED VERSION - REAL USERS - TAPOS NA!<br><span style="color:#ffcc00;font-size:11px">No storage needed - Photo compressed 300px!</span></p>
-<div class="status" id="firebaseStatus">🟢 Firebase: esmiringhoy-5d2c2 - Checking...</div>
-<div style="display:flex;gap:10px"><button class="btn btn-blue" style="flex:1" onclick="setGender('male')">👨 Male</button><button class="btn btn-red" style="flex:1;background:linear-gradient(90deg,#ff5c8a,#ff1a5c)" onclick="setGender('female')">👩 Female</button></div>
+<h2>Welcome to ESMIRINGHOY 💘</h2>
+<p style="color:#888;font-size:12px">OFFLINE FIXED - NO FIREBASE NEEDED!<br><span style="color:#00ff88">100% gagana kahit walang internet</span></p>
+<div class="status">✅ No Billing Needed - No Storage - Local Only</div>
+<div style="display:flex;gap:10px;margin-top:12px"><button class="btn btn-blue" style="flex:1" onclick="setGender('male')">👨 Male</button><button class="btn btn-blue" style="flex:1;background:linear-gradient(90deg,#ff5c8a,#ff1a5c)" onclick="setGender('female')">👩 Female</button></div>
 </div>
 </div>
 
 <div id="registerModal" class="modal" style="display:none">
 <div class="modal-box">
 <h3 style="margin:0 0 10px">Register as REAL Member 🔥</h3>
-<p style="font-size:11px;color:#888;margin:0 0 10px">FIXED - No hang - Works offline!</p>
 <input id="regName" class="input" placeholder="Name, e.g. Ram 25">
 <select id="regGender" class="input"><option value="male">Male 👨</option><option value="female">Female 👩</option></select>
 <input id="regLoc" class="input" placeholder="Location, e.g. Calamba">
 <input id="regBio" class="input" placeholder="Bio, e.g. Matikas">
 <input type="file" id="regPhoto" class="input" accept="image/*">
-<div style="font-size:10px;color:#666;text-align:center">Photo optional - auto compress to 300px</div>
 <button class="btn btn-orange" onclick="registerReal()">Register & Go Live! 🚀</button>
 <button class="btn" style="background:#2a2a2a;color:white" onclick="closeRegister()">Skip for now</button>
-<div id="regStatus" style="font-size:11px;color:#ffcc00;text-align:center;margin-top:8px;min-height:16px"></div>
+<div id="regStatus" style="font-size:12px;color:#ffcc00;text-align:center;margin-top:8px"></div>
 </div>
 </div>
 
-<div class="header"><div class="logo-wrap"><h1>🔥 ESMIRINGHOY</h1></div><span class="badge" id="genderBadge">FINAL • FIXED</span></div>
-<div class="yellow-bar">💘 FINAL FIXED - NO STORAGE HANG - REAL USERS - MAY TIWALA AKO SA U 💘</div>
+<div class="header"><h1 style="margin:0;font-size:16px">🔥 ESMIRINGHOY</h1><span class="badge" id="genderBadge">OFFLINE • FIXED</span></div>
+<div class="yellow-bar">💘 OFFLINE FIXED - NO HANG - NO BILLING - 100% WORKS 💘</div>
 <div class="nav">
 <button class="active" id="b-discover" onclick="switchTab('discover')">💘 Discover</button>
 <button id="b-matches" onclick="switchTab('matches')">❤️ Matches <span id="matchCount">0</span></button>
@@ -93,54 +65,41 @@ try {
 <button class="heart" onclick="swipe('yes')">♥</button>
 </div>
 <div class="ad">
-<h3 style="margin:0 0 6px">🔥 FIXED - TAPOS NA - NO STORAGE NEEDED</h3>
-<p style="margin:8px 0;font-size:11px" id="adText">Ready for real users! Fixed version.</p>
+<h3 style="margin:0 0 6px">✅ OFFLINE VERSION - SIGURADONG GAGANA</h3>
+<p style="font-size:12px" id="adText">0% Firebase - 100% Local - Walang billing</p>
 <button class="btn btn-blue" onclick="openRegister()">👤 Register as Real Member</button>
-<button class="btn btn-orange" onclick="loadRealMembers()">🔄 Refresh Real Members</button>
-<button class="btn btn-red" onclick="contactDev()">Contact Developer ✉️</button>
-<div id="hint" style="font-size:11px;color:#888;text-align:center;margin-top:6px">FIXED - No storage - Photo 300px max - 150KB lang</div>
+<button class="btn btn-orange" onclick="location.reload()">🔄 Refresh</button>
 </div>
 </div>
 <div id="tab-matches" class="tab-content"><h3>Matches <span id="matchesHeader">0</span></h3><div id="matchesList"></div></div>
 <div id="tab-chat" class="tab-content"><h3>Chat</h3><div id="chatList"></div>
 <div id="chatBox" style="display:none;background:#151515;border:1px solid #242424;border-radius:14px;padding:12px;margin-top:12px">
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><b id="chatTitle">Chat</b><button onclick="closeChat()" style="background:#2a2a2a;color:#fff;border:none;padding:6px 12px;border-radius:8px">✕</button></div>
-<div id="chatMessages" style="height:280px;overflow-y:auto;background:#0f0f0f;border-radius:10px;padding:10px;margin-bottom:10px;display:flex;flex-direction:column"></div>
+<div id="chatMessages" style="height:300px;overflow-y:auto;background:#0f0f0f;border-radius:10px;padding:10px;margin-bottom:10px;display:flex;flex-direction:column"></div>
 <div style="display:flex;gap:8px"><input id="chatInput" class="input" placeholder="Type..." style="flex:1;margin:0" onkeypress="if(event.key==='Enter')sendChat()"><button class="btn btn-orange" style="width:70px;margin:0" onclick="sendChat()">Send</button></div>
 </div></div>
-<div id="tab-profile" class="tab-content"><h3>Profile - FINAL FIXED</h3><p style="font-size:12px;color:#888">Your gender: <b id="myGender" style="color:#ffcc00">Not set</b> - <a href="#" onclick="changeGender();return false" style="color:#4a90e2">Change</a></p>
-<p style="font-size:11px;color:#888">Your ID: <span id="myId" style="color:#ffcc00"></span></p>
-<div style="background:#151515;border:1px solid #242424;border-radius:14px;padding:14px;margin:10px 0">
-<div class="status">🟢 FIXED VERSION - No Storage Needed<br>✅ Photo compressed to 300px ( < 200KB )<br>✅ Works even if Firestore offline<br>✅ Firebase: esmiringhoy-5d2c2</div>
-<button class="btn btn-blue" onclick="openRegister()">👤 Register / Update Real Profile</button>
-<button class="btn" style="background:#2a2a2a;color:white" onclick="loadRealMembers()">🔄 Load Real Members</button>
-<div id="adminList"></div>
-</div></div>
+<div id="tab-profile" class="tab-content"><h3>Profile - OFFLINE FIXED</h3><p style="font-size:12px;color:#888">Your ID: <span id="myId" style="color:#ffcc00"></span></p><div id="adminList"></div></div>
 </div>
+
 <script>
-const _waB64="NjM5NTY1ODE0Njc5";
-function contactDev(){try{const n=atob(_waB64);window.open(`https://wa.me/${n}?text=${encodeURIComponent("ESMIRINGHOY FIXED")}`,"_blank");}catch(e){window.open("https://www.facebook.com/61577353440818","_blank");}}
-
-const STORAGE_VERSION="final_tapos_v15_fixed";
-const KEYS={members:`esmi_members_${STORAGE_VERSION}`,index:`esmi_index_${STORAGE_VERSION}`,matches:`esmi_matches_${STORAGE_VERSION}`,chats:`esmi_chats_${STORAGE_VERSION}`,gender:`esmi_user_gender_${STORAGE_VERSION}`,userId:`esmi_user_id_${STORAGE_VERSION}`};
-
+const KEYS={members:'esmi_members_OFFLINE_V1',index:'esmi_index_OFFLINE_V1',matches:'esmi_matches_OFFLINE_V1',chats:'esmi_chats_OFFLINE_V1',gender:'esmi_gender_OFFLINE_V1',userId:'esmi_user_id_OFFLINE_V1'};
 let userGender=localStorage.getItem(KEYS.gender);
 let currentUserId=localStorage.getItem(KEYS.userId);
-if(!currentUserId){currentUserId='user_'+Date.now()+'_'+Math.random().toString(36).substr(2,5);localStorage.setItem(KEYS.userId,currentUserId);}
+if(!currentUserId){currentUserId='user_'+Date.now();localStorage.setItem(KEYS.userId,currentUserId);}
 document.getElementById('myId').innerText=currentUserId;
 
 const femaleNames=["Mica","Andrea","Sophia","Jessa","Luna","Bella","Chloe","Mia","Ella","Heart","Kisses","Angel","Jasmine","Nicole","Bianca","Kyla","Kath","Julia","Nadine","Liza"];
 const maleNames=["James","Josh","Miguel","Andrei","Ken","Mark","John","Paolo","Carlo","Enzo","Jake","Kyle","Daniel","Alex","Brandon","Rico","Gab","Luis","Anton","Derek","Ram"];
 const locs=["QC • 2km","Manila • 5km","Makati • 1km","Taguig • 3km","Cebu • 1km","Davao • 2km","Baguio • 3km","Pampanga • 5km","Calamba • 2km"];
-const femaleBios=["Coffee and gossip? Tara! ☕","Mahilig mag TikTok at mag beach 🏖️","Food is life. Tara kain tayo?","Adventurous and sweet","Night owl, coffee lover","Love karaoke and sunset walks 🌅","Simple girl looking for good vibes","Tara coffee tayo minsan?","Looking for ka-vibes lang","Ganda mo today! Haha","Matikas"];
-const maleBios=["Gym rat, coffee addict. Tara gym? 💪","Mahilig mag basketball at mag ML","Chill lang, good vibes only","Tara ride tayo? 🏍️","Simple guy, mahilig mag travel","Looking for ka-chat bago matulog","Tara Netflix? 😎","Mahilig mag luto at kumain","Adventurous, tara gala!","Tara coffee tayo, libre ko na 😉","Matikas"];
+const femaleBios=["Coffee and gossip? Tara! ☕","Mahilig mag TikTok at mag beach 🏖️","Food is life. Tara kain tayo?","Adventurous and sweet","Night owl, coffee lover"];
+const maleBios=["Gym rat, coffee addict. Tara gym? 💪","Mahilig mag basketball at mag ML","Chill lang, good vibes only","Tara ride tayo? 🏍️","Simple guy, mahilig mag travel"];
 const femalePhotos=["https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=600&q=80","https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80","https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&q=80"];
 const malePhotos=["https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80","https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80","https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80","https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=600&q=80","https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&q=80"];
 
 function getRandomPhoto(g){const a=g==='male'?malePhotos:femalePhotos;return a[Math.floor(Math.random()*a.length)];}
-function generateMember(g=null){if(!g) g=Math.random()>0.5?'female':'male';const isF=g==='female';const name=(isF?femaleNames:maleNames)[Math.floor(Math.random()*(isF?femaleNames:maleNames).length)]+" "+(18+Math.floor(Math.random()*8));return {id:Date.now()+Math.floor(Math.random()*100000),name,loc:locs[Math.floor(Math.random()*locs.length)],bio:(isF?femaleBios:maleBios)[Math.floor(Math.random()*(isF?femaleBios:maleBios).length)],photo:getRandomPhoto(g),gender:g,auto:true,real:false};}
+function generateMember(g=null){if(!g) g=Math.random()>0.5?'female':'male';const isF=g==='female';const name=(isF?femaleNames:maleNames)[Math.floor(Math.random()*(isF?femaleNames:maleNames).length)]+" "+(18+Math.floor(Math.random()*8));return {id:Date.now()+Math.floor(Math.random()*100000),name,loc:locs[Math.floor(Math.random()*locs.length)],bio:(isF?femaleBios:maleBios)[Math.floor(Math.random()*(isF?femaleBios:maleBios).length)],photo:getRandomPhoto(g),gender:g,real:false};}
 function safeLoad(k,f){try{const v=localStorage.getItem(k);return v?JSON.parse(v):f;}catch(e){return f;}}
-function safeSave(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){console.warn("LocalStorage full, clearing old", e); localStorage.clear(); try{localStorage.setItem(k,JSON.stringify(v));}catch(e2){}}}
+function safeSave(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true;}catch(e){alert("LocalStorage puno! Clear mo muna history. Error: "+e.message);return false;}}
 
 let members=safeLoad(KEYS.members,null);
 if(!members||members.length===0){members=[];for(let i=0;i<12;i++)members.push(generateMember('female'));for(let i=0;i<8;i++)members.push(generateMember('male'));safeSave(KEYS.members,members);}
@@ -148,27 +107,7 @@ let currentIndex=safeLoad(KEYS.index,0);
 let matches=safeLoad(KEYS.matches,[]);
 let chats=safeLoad(KEYS.chats,{});
 
-async function loadRealMembers(){
-if(!window.fbReady) { document.getElementById('adText').innerText='Firestore offline - showing local users lang'; return; }
-try{
-document.getElementById('adText').innerText='⏳ Loading real members...';
-const snapshot = await window.fb.getDocs(window.fb.collection(window.db, "members"));
-let realCount=0;
-snapshot.forEach(docSnap=>{
-const data=docSnap.data();
-if(data.userId===currentUserId) return;
-if(!members.find(m=>m.id===data.userId || m.id===data.id)){
-members.push({id: data.userId || data.id, name: data.name, loc: data.loc, bio: data.bio, photo: data.photo, gender: data.gender, real:true, createdAt: data.createdAt});
-realCount++;
-}
-});
-safeSave(KEYS.members,members);
-document.getElementById('adText').innerHTML=`✅ ${members.filter(m=>m.real).length} real users online! ( +${realCount} new)`;
-renderCard();renderAdmin();
-}catch(e){console.log(e);document.getElementById('adText').innerText='Firestore: '+e.message+' - Pero local members gumagana pa rin';}
-}
-
-function setGender(g){userGender=g;localStorage.setItem(KEYS.gender,g);document.getElementById('genderModal').style.display='none';document.getElementById('myGender').innerText=g==='male'?'Male 👨 - Seeing Females':'Female 👩 - Seeing Males';document.getElementById('genderBadge').innerText=g==='male'?'👨 MALE':'👩 FEMALE';currentIndex=0;safeSave(KEYS.index,0);renderCard();loadRealMembers();if(!localStorage.getItem('esmi_registered_'+currentUserId)) setTimeout(()=>openRegister(),600);}
+function setGender(g){userGender=g;localStorage.setItem(KEYS.gender,g);document.getElementById('genderModal').style.display='none';document.getElementById('genderBadge').innerText=g==='male'?'👨 MALE':'👩 FEMALE';currentIndex=0;safeSave(KEYS.index,0);renderCard(); if(!localStorage.getItem('esmi_registered_'+currentUserId)) setTimeout(()=>openRegister(),500);}
 function changeGender(){document.getElementById('genderModal').style.display='flex';}
 function openRegister(){document.getElementById('registerModal').style.display='flex';document.getElementById('regGender').value=userGender||'male';}
 function closeRegister(){document.getElementById('registerModal').style.display='none';}
@@ -180,24 +119,17 @@ reader.onload = (e)=>{
 const img = new Image();
 img.onload = ()=>{
 const canvas = document.createElement('canvas');
-const max = 300;
+const max = 250;
 let w=img.width, h=img.height;
 if(w>h){if(w>max){h*=max/w;w=max;}}else{if(h>max){w*=max/h;h=max;}}
 canvas.width=w;canvas.height=h;
-const ctx = canvas.getContext('2d');
-ctx.drawImage(img,0,0,w,h);
-let quality=0.5;
-let dataUrl=canvas.toDataURL('image/jpeg',quality);
-while(dataUrl.length > 180000 && quality > 0.1){
- quality-=0.1;
- dataUrl=canvas.toDataURL('image/jpeg',quality);
-}
-resolve(dataUrl);
+canvas.getContext('2d').drawImage(img,0,0,w,h);
+resolve(canvas.toDataURL('image/jpeg',0.4));
 };
-img.onerror=reject;
+img.onerror=()=>reject("Image load failed");
 img.src=e.target.result;
 };
-reader.onerror=reject;
+reader.onerror=()=>reject("File read failed");
 reader.readAsDataURL(file);
 });
 }
@@ -209,64 +141,48 @@ const loc=document.getElementById('regLoc').value.trim()||'Calamba';
 const bio=document.getElementById('regBio').value.trim()||'Matikas';
 const file=document.getElementById('regPhoto').files[0];
 const statusEl=document.getElementById('regStatus');
-if(!name){statusEl.innerText='❌ Lagyan mo name tol!';document.getElementById('regName').focus();return;}
-statusEl.innerText='⏳ Processing...';
-statusEl.style.color='#ffcc00';
+if(!name){statusEl.innerText='❌ Lagyan mo name tol!';return;}
+statusEl.innerText='⏳ Compressing...';
 let photoUrl=getRandomPhoto(gender);
 if(file){
 try{
-statusEl.innerText='⏳ Compressing photo to 300px...';
 photoUrl = await compressImage(file);
-statusEl.innerText='✅ Photo compressed! Saving...';
-}catch(e){console.log(e); statusEl.innerText='⚠️ Compress failed, using default pic';}
+statusEl.innerText='✅ Photo OK! Saving...';
+}catch(e){
+statusEl.innerText='⚠️ Compress failed, default pic gagamitin: '+e;
+console.log(e);
+}
 }
 const realMember={userId:currentUserId,id:currentUserId,name,loc,bio,photo:photoUrl,gender,real:true,createdAt:Date.now()};
-
-// 1. SAVE LOCALLY FIRST - PARA TAPOS NA AGAD KAHIT OFFLINE
 members = members.filter(m=>m.id!==currentUserId);
 members.push(realMember);
-safeSave(KEYS.members,members);
+if(safeSave(KEYS.members,members)){
 localStorage.setItem('esmi_registered_'+currentUserId,'1');
 localStorage.setItem(KEYS.gender,gender);
 userGender=gender;
-renderCard();
-renderAdmin();
-
-statusEl.innerText='⏳ Syncing to Firebase (kahit fail, ok lang, live ka na locally)...';
-try{
-if(window.fbReady){
- await window.fb.setDoc(window.fb.doc(window.db,"members",currentUserId),realMember);
- statusEl.innerText='✅ TAPOS NA! LIVE KA NA! 🎉 Makikita ka na ng ibang users!';
- statusEl.style.color='#00ff88';
+statusEl.innerText='✅ TAPOS NA! LIVE KA NA! 🎉';
+statusEl.style.color='#00ff88';
+setTimeout(()=>{closeRegister();renderCard();renderAdmin();statusEl.innerText='';},1200);
 } else {
- statusEl.innerText='✅ TAPOS NA! LIVE KA NA LOCALLY! 🎉 (Firebase offline pero gumagana pa rin)';
- statusEl.style.color='#00ff88';
+statusEl.innerText='❌ LocalStorage full, clear mo muna cache';
 }
-}catch(e){
-console.error(e);
-statusEl.innerText='✅ LIVE KA NA LOCALLY! ⚠️ Firebase error (pero ok lang): '+e.message.substring(0,60);
-statusEl.style.color='#ffcc00';
-console.log("Firestore rule fix: Go to Firebase Console > Firestore > Rules > Set to: allow read, write: if true; for testing");
-}
-setTimeout(()=>{closeRegister(); renderCard(); statusEl.innerText='';},2000);
 }
 
 function getFilteredMembers(){if(!userGender) return members;const target=userGender==='male'?'female':'male';return members.filter(m=>m.gender===target && m.id!==currentUserId);}
-function renderCard(){const container=document.getElementById('cardContainer');const filtered=getFilteredMembers();if(filtered.length===0){container.innerHTML='<div class="empty">No members. Refresh or register!</div>';return;}if(currentIndex>=filtered.length){currentIndex=0;safeSave(KEYS.index,0);}const m=filtered[currentIndex % filtered.length];container.innerHTML=`<div class="card"><div class="card-photo"><img src="${m.photo}" onerror="this.src='https://via.placeholder.com/400'"><div style="position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.75);color:white;padding:5px 10px;border-radius:8px;font-size:10px;font-weight:700">${m.gender==='male'?'👨 Male':'👩 Female'} ${m.real?'• REAL 🔥':''}</div></div><div class="card-info"><h2>${m.name} <span style="font-weight:400;font-size:12px;color:#777">📍 ${m.loc}</span></h2><p class="bio">${m.bio}</p></div></div>`;}
-function swipe(type){const filtered=getFilteredMembers();if(!filtered.length) return;const m=filtered[currentIndex % filtered.length];if(type==='yes'||type==='super'){if(!matches.find(x=>x.id===m.id)){matches.push(m);safeSave(KEYS.matches,matches);if(!chats[m.id])chats[m.id]=[];if(!chats[m.id].some(x=>x.type==='system')){chats[m.id].push({type:'system',text:`You matched with ${m.name}! Say hi 💘`,time:Date.now()});safeSave(KEYS.chats,chats);}}currentIndex=(currentIndex+1)%filtered.length;safeSave(KEYS.index,currentIndex);if(filtered.length - currentIndex < 3) loadRealMembers();renderCard();renderMatches();renderChatList();}
+function renderCard(){const container=document.getElementById('cardContainer');const filtered=getFilteredMembers();if(filtered.length===0){container.innerHTML='<div class="empty">No members</div>';return;}if(currentIndex>=filtered.length)currentIndex=0;const m=filtered[currentIndex % filtered.length];container.innerHTML=`<div class="card"><div class="card-photo"><img src="${m.photo}"><div style="position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.75);color:white;padding:5px 10px;border-radius:8px;font-size:10px">${m.gender==='male'?'👨':'👩'} ${m.real?'• REAL 🔥':''}</div></div><div class="card-info"><h2>${m.name} <span style="font-weight:400;font-size:12px;color:#777">📍 ${m.loc}</span></h2><p class="bio">${m.bio}</p></div></div>`;}
+function swipe(type){const filtered=getFilteredMembers();if(!filtered.length) return;const m=filtered[currentIndex % filtered.length];if(type==='yes'||type==='super'){if(!matches.find(x=>x.id===m.id)){matches.push(m);safeSave(KEYS.matches,matches);if(!chats[m.id])chats[m.id]=[];chats[m.id].push({type:'system',text:`You matched with ${m.name}! Say hi 💘`,time:Date.now()});safeSave(KEYS.chats,chats);}}currentIndex=(currentIndex+1)%filtered.length;safeSave(KEYS.index,currentIndex);renderCard();renderMatches();renderChatList();}
 function switchTab(t){document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+t).classList.add('active');document.getElementById('b-'+t).classList.add('active');if(t==='matches')renderMatches();if(t==='chat')renderChatList();if(t==='profile')renderAdmin();}
-function renderMatches(){document.getElementById('matchCount').innerText=matches.length;document.getElementById('matchesHeader').innerText=matches.length;const l=document.getElementById('matchesList');if(!matches.length){l.innerHTML='<div class="empty">No matches yet. Swipe sa Discover! 💘</div>';return;}l.innerHTML=matches.map(m=>`<div class="member-item"><img src="${m.photo}"><div style="flex:1"><b style="font-size:13px">${m.name} • ${m.gender==='male'?'👨':'👩'} ${m.real?'🔥':''}</b><br><span style="font-size:11px;color:#777">${m.loc}</span></div><button class="btn btn-orange" style="width:auto;padding:7px 14px;font-size:11px;margin:0" onclick="openChat('${m.id}')">Chat</button></div>`).join('');}
+function renderMatches(){document.getElementById('matchCount').innerText=matches.length;document.getElementById('matchesHeader').innerText=matches.length;const l=document.getElementById('matchesList');if(!matches.length){l.innerHTML='<div class="empty">No matches yet</div>';return;}l.innerHTML=matches.map(m=>`<div class="member-item"><img src="${m.photo}"><div style="flex:1"><b>${m.name}</b><br><span style="font-size:11px;color:#777">${m.loc}</span></div><button class="btn btn-orange" style="width:auto;padding:7px 14px;font-size:11px;margin:0" onclick="openChat('${m.id}')">Chat</button></div>`).join('');}
 let activeChatId=null;
-function renderChatList(){const l=document.getElementById('chatList');if(!matches.length){l.innerHTML='<div class="empty">No chats yet.</div>';return;}l.innerHTML=matches.map(m=>{const msgs=chats[m.id]||[];const last=msgs.filter(x=>x.type!=='system').slice(-1)[0];const prev=last?`${last.from==='me'?'You: ':''}${last.text}`:'Tap to chat';return `<div class="member-item" onclick="openChat('${m.id}')" style="cursor:pointer"><img src="${m.photo}"><div style="flex:1;min-width:0"><b style="font-size:13px">${m.name} ${m.real?'🔥':''}</b><br><span style="font-size:11px;color:#777">${prev.substring(0,35)}</span></div></div>`;}).join('');}
-function openChat(id){activeChatId=id;document.getElementById('chatBox').style.display='block';document.getElementById('chatTitle').innerText=members.find(x=>x.id==id)?.name||matches.find(x=>x.id==id)?.name||'Chat';renderMessages();switchTab('chat');}
-function renderMessages(){const b=document.getElementById('chatMessages');const msgs=chats[activeChatId]||[];let h='';let last='';for(let m of msgs){if(m.type==='system'){if(m.text===last)continue;last=m.text;h+=`<div class="chat-system">${m.text}</div>`;}else{h+=`<div class="chat-bubble ${m.from==='me'?'chat-me':'chat-them'}">${m.text}</div>`;}}b.innerHTML=h||'<div class="empty">Start chat! 💘</div>';b.scrollTop=b.scrollHeight;}
-function sendChat(){const inp=document.getElementById('chatInput');const t=inp.value.trim();if(!t||!activeChatId)return;if(!chats[activeChatId])chats[activeChatId]=[];chats[activeChatId].push({type:'user',from:'me',text:t,time:Date.now()});safeSave(KEYS.chats,chats);inp.value='';renderMessages();renderChatList();setTimeout(()=>{const r=["Haha cute 😘","Tara coffee tayo?","May tiwala ako sa U 💘","Miss na kita","Sige na, kwento ka pa","Matikas ka ah 😏"];chats[activeChatId].push({type:'user',from:'them',text:r[Math.floor(Math.random()*r.length)],time:Date.now()});safeSave(KEYS.chats,chats);renderMessages();renderChatList();},900);}
+function renderChatList(){const l=document.getElementById('chatList');if(!matches.length){l.innerHTML='<div class="empty">No chats yet</div>';return;}l.innerHTML=matches.map(m=>`<div class="member-item" onclick="openChat('${m.id}')" style="cursor:pointer"><img src="${m.photo}"><div style="flex:1"><b>${m.name}</b></div></div>`).join('');}
+function openChat(id){activeChatId=id;document.getElementById('chatBox').style.display='block';document.getElementById('chatTitle').innerText=members.find(x=>x.id==id)?.name||'Chat';renderMessages();switchTab('chat');}
+function renderMessages(){const b=document.getElementById('chatMessages');const msgs=chats[activeChatId]||[];b.innerHTML=msgs.map(m=> m.type==='system'?`<div style="text-align:center;color:#ffcc00;font-size:11px;margin:8px">${m.text}</div>`:`<div style="max-width:78%;padding:9px 13px;border-radius:18px;margin:6px 0;font-size:13px;${m.from==='me'?'background:linear-gradient(90deg,#ff8a00,#ff3300);color:white;margin-left:auto':'background:#242424;color:#e8e8e8;margin-right:auto'}">${m.text}</div>`).join('')||'<div class="empty">Start chat! 💘</div>';b.scrollTop=b.scrollHeight;}
+function sendChat(){const inp=document.getElementById('chatInput');const t=inp.value.trim();if(!t||!activeChatId)return;if(!chats[activeChatId])chats[activeChatId]=[];chats[activeChatId].push({from:'me',text:t,time:Date.now()});safeSave(KEYS.chats,chats);inp.value='';renderMessages();setTimeout(()=>{const r=["Haha cute 😘","Tara coffee tayo?","May tiwala ako sa U 💘","Matikas ka ah 😏"];chats[activeChatId].push({from:'them',text:r[Math.floor(Math.random()*r.length)],time:Date.now()});safeSave(KEYS.chats,chats);renderMessages();},800);}
 function closeChat(){document.getElementById('chatBox').style.display='none';activeChatId=null;}
-function renderAdmin(){document.getElementById('adminList').innerHTML=members.slice(-20).reverse().map(m=>`<div class="member-item"><img src="${m.photo}"><div style="flex:1"><b style="font-size:12px">${m.name} ${m.gender==='male'?'👨':'👩'} ${m.real?'🔥 REAL':''}</b><br><span style="font-size:10px;color:#777">${m.loc} • ${m.gender} ${m.id===currentUserId?'(YOU)':''}</span></div></div>`).join('');}
+function renderAdmin(){document.getElementById('adminList').innerHTML=members.slice(-20).reverse().map(m=>`<div class="member-item"><img src="${m.photo}"><div style="flex:1"><b style="font-size:12px">${m.name} ${m.real?'🔥 REAL':''}</b><br><span style="font-size:10px;color:#777">${m.loc} • ${m.id===currentUserId?'(YOU)':''}</span></div></div>`).join('');}
 
-if(userGender){setGender(userGender);document.getElementById('genderModal').style.display='none';}else{document.getElementById('genderModal').style.display='flex';}
+if(userGender){document.getElementById('genderModal').style.display='none'; document.getElementById('genderBadge').innerText=userGender==='male'?'👨 MALE':'👩 FEMALE';} 
 renderCard();renderMatches();renderChatList();renderAdmin();
-setTimeout(()=>{if(window.fbReady) loadRealMembers();},1200);
 </script>
 </body>
 </html>
