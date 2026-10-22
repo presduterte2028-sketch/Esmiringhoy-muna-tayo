@@ -196,7 +196,74 @@ function changeGender(){document.getElementById('genderModal').style.display='fl
 function openRegister(){document.getElementById('registerModal').style.display='flex';document.getElementById('regGender').value=userGender||'female';}
 function closeRegister(){document.getElementById('registerModal').style.display='none';}
 
+
 async function registerReal(){
+const nameEl=document.getElementById('regName');
+const name=nameEl.value.trim();
+const gender=document.getElementById('regGender').value;
+const loc=document.getElementById('regLoc').value.trim()||'Philippines';
+const bio=document.getElementById('regBio').value.trim()||'Real member - ready to mingle!';
+const file=document.getElementById('regPhoto').files[0];
+const statusEl=document.getElementById('regStatus');
+if(!name){
+statusEl.innerText='❌ Lagyan mo muna name mo tol! Ex: Mica 22';
+nameEl.focus();
+nameEl.style.border='1.5px solid #ff3300';
+setTimeout(()=>nameEl.style.border='1px solid #333',2000);
+return;
+}
+statusEl.innerText='⏳ Registering... Please wait';
+let photoUrl=getRandomPhoto(gender);
+// Try upload only if file exists and storage ready, but never block if fails
+if(file){
+try{
+statusEl.innerText='⏳ Uploading photo...';
+if(window.fbReady && window.storage){
+try{
+const storageRef=window.fb.ref(window.storage,`members/${currentUserId}_${Date.now()}_${file.name}`);
+await window.fb.uploadBytes(storageRef,file);
+photoUrl=await window.fb.getDownloadURL(storageRef);
+}catch(storageErr){
+console.log('Storage upload failed, using default:', storageErr);
+statusEl.innerText='⚠️ Photo upload failed (Storage not enabled yet), using default photo...';
+}
+}else{
+// Local preview
+photoUrl=await new Promise(res=>{const r=new FileReader();r.onload=e=>res(e.target.result);r.readAsDataURL(file);});
+}
+}catch(e){
+console.log('Photo error, using default', e);
+}
+}
+const realMember={userId:currentUserId,id:currentUserId,name,loc,bio,photo:photoUrl,gender,real:true,createdAt:Date.now()};
+try{
+statusEl.innerText='⏳ Saving to Firebase...';
+if(window.fbReady && window.db){
+await window.fb.setDoc(window.fb.doc(window.db,"members",currentUserId),realMember);
+statusEl.innerText='✅ LIVE NA! Real member ka na! Makikita ka na ng ibang users! 🎉';
+}else{
+statusEl.innerText='❌ Firebase not connected - Check internet';
+return;
+}
+localStorage.setItem('esmi_registered_'+currentUserId,'1');
+localStorage.setItem(KEYS.gender,gender);
+userGender=gender;
+if(!members.find(m=>m.id===currentUserId)){
+members.push(realMember);
+safeSave(KEYS.members,members);
+}
+setTimeout(()=>{closeRegister();renderCard();renderAdmin();loadRealMembers();statusEl.innerText='';},1500);
+}catch(e){
+console.error(e);
+if(e.message && e.message.includes('Missing or insufficient permissions')){
+statusEl.innerText='❌ Firestore Rules Error: Go to Firestore > Rules > Set to test mode (allow read,write)';
+}else{
+statusEl.innerText='❌ Error: '+e.message;
+}
+}
+}
+
+async function registerReal_OLD(){
 const name=document.getElementById('regName').value.trim();
 const gender=document.getElementById('regGender').value;
 const loc=document.getElementById('regLoc').value.trim()||'Philippines';
